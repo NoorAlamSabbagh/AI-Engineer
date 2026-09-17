@@ -1,0 +1,82 @@
+# Python caches and build output
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+develop-eggs/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Virtual environments and local configuration
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.env
+.env.*
+!.env.example
+*.env.save
+
+# Test, type-checker, and notebook caches
+.pytest_cache/
+.mypy_cache/
+.pyright/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.ipynb_checkpoints/
+virtual_documents/
+
+# Generated application data and local model files
+*.db
+*.sqlite
+*.sqlite3
+*.pkl
+*.joblib
+*.pth
+*.safetensors
+*.gguf
+model_cache/
+llms/
+vector_db/
+products_vectorstore/
+chroma_db/
+wandb/
+gradio/
+scraper_cache/
+preprocessed_db/
+
+# Logs and generated reports
+*.log
+nohup.out
+report.txt
+reports/
+
+# Secrets and private keys
+*.pem
+*.key
+*.crt
+credentials.json
+secrets.json
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+
+# Local project-specific directories
+local/
+challenge/

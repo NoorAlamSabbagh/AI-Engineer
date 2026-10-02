@@ -31,5 +31,11 @@
 // In simple terms: **Ollama is like a local AI engine that lets you run models such as Qwen3 on your own computer.
 
 // Day1 Lecture(1) Notes:
-// ollama --help 
+// ollama --help
 // ollama run phi3 model
+
+
+//Steps
+// .\.venv\Scripts\Activate.ps1
+// uvicorn src.main:app --reload
+// 

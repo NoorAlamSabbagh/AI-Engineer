@@ -1,0 +1,225 @@
+================================================================================
+          AI ENGINEER COURSE - WEEK & DAY WISE FUNCTIONALITY GUIDE
+================================================================================
+Workspace Root: d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice
+Python .venv:   d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice\.venv\Scripts\python.exe
+Document Asset: d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice\week2\hamlet.txt
+================================================================================
+
+This document maps every single function and script by WEEK and DAY so that you
+can easily understand what each function does, which file contains it, and
+the exact PowerShell command to run and verify its output.
+
+================================================================================
+📅 WEEK 2: DAY 1 — LLM FRAMEWORKS & ADVANCED API ENGINEERING (LEC 42)
+================================================================================
+
+--------------------------------------------------------------------------------
+PART 1: BASELINE VERIFICATION & TOKEN / COST METRICS (Cells 58–62)
+--------------------------------------------------------------------------------
+File:
+  [MyPractice\week2\check_hamlet_gemini.py]
+
+Function Name:
+  run_check()
+
+Simple Explanation (What it does):
+  1. Opens Shakespeare's "hamlet.txt" and verifies it can find the quote "Speak, man".
+  2. Asks a question to the LLM WITHOUT attaching the document context.
+  3. Displays the answer and prints the 4 critical token/cost lines:
+     - Input tokens (usage.prompt_tokens)
+     - Output tokens (usage.completion_tokens)
+     - Total tokens (usage.total_tokens)
+     - Cost in cents (_hidden_params["response_cost"] * 100)
+
+When to Run:
+  When you want to test baseline token count and costs on a short prompt
+  before adding large documents.
+
+PowerShell Command:
+  & "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice\.venv\Scripts\python.exe" "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice\week2\check_hamlet_gemini.py"
+
+Expected Output:
+  - Text found: "Speak, man. Laer. Where is my father? King. Dead."
+  - Answer: "In Shakespeare's 'Hamlet', when Laertes asks 'Where is my father?'..."
+  - Input tokens:  ~25
+  - Output tokens: ~89
+  - Total tokens:  ~114
+  - Total cost:    ~0.0057 cents ($0.000057 USD)
+
+
+--------------------------------------------------------------------------------
+PART 2: PRO-FEATURE — PROMPT CACHING (Cells 63–67)
+--------------------------------------------------------------------------------
+File:
+  [MyPractice\week2\demo_prompt_caching.py]
+
+Function Name:
+  lec42_day1_prompt_caching_demo()
+
+Simple Explanation (What it does):
+  1. Loads the entire Hamlet book (~191,726 characters, ~48,000 tokens).
+  2. Attaches the static text as a SYSTEM prefix.
+  3. Call 1 (Cold Cache): Model processes all 49,696 tokens from scratch.
+  4. Call 2 (Warm Cache): Model reuses the cached prefix!
+     Reads 49,536 tokens directly from memory at ~50% discounted cost and 2x faster latency!
+
+When to Run:
+  When you want to see how prompt caching saves money and latency on large documents.
+
+PowerShell Command:
+  & "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice\.venv\Scripts\python.exe" "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice\week2\demo_prompt_caching.py"
+
+Expected Output:
+  - Step 1: Text loaded (~47,931 tokens)
+  - Step 5 (Cold): Input: 49,696 | Cached: 0 | Cost: ~0.7486 cents | Latency: ~2.66s
+  - Step 6 (Warm): Input: 49,693 | Cached: 49,536 | Cost: ~0.3773 cents | Latency: ~1.51s
+  - Summary: 49.6% cheaper on warm call!
+
+
+--------------------------------------------------------------------------------
+PART 2B: OPENAI PROMPT CACHING DEEP-DIVE (Threshold & Prefix Matching Rules)
+--------------------------------------------------------------------------------
+File:
+  [MyPractice\week2\demo_openai_prompt_caching.py]
+
+Function Name:
+  run_openai_prompt_caching_deepdive()
+
+Simple Explanation (What it does):
+  Verifies the exact requirements stated in the OpenAI Prompt Caching documentation:
+  1. Threshold Test: Proves prompts < 1,024 tokens produce 0 cached tokens.
+  2. Large Prefix Test: Sends a 5,000 token static context.
+  3. Cache Hit Verification: Demonstrates that Call 2 reuses 5,120 cached tokens!
+  4. Realizes a ~49.2% cost reduction live on OpenAI's gpt-4o-mini!
+
+When to Run:
+  When you want to verify the specific OpenAI Prompt Caching rules:
+  - Exact prefix matching
+  - 1,024 token minimum limit
+  - Up to 4x / 50% discount on cached tokens
+
+PowerShell Command:
+  & "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice\.venv\Scripts\python.exe" "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice\week2\demo_openai_prompt_caching.py"
+
+Expected Output:
+  - Short prompt (<1024 tokens): Cached tokens = 0
+  - Request 1 (Cold): Input: 5,184 | Cached: 0 | Cost: ~0.0793 cents
+  - Request 2 (Warm): Input: 5,186 | Cached: 5,120 (CACHE HIT!) | Cost: ~0.0403 cents
+  - Summary: 49.2% discount verified!
+
+
+--------------------------------------------------------------------------------
+PART 3: CANONICAL LECTURE RUNNER — LANGCHAIN VS LITELLM
+--------------------------------------------------------------------------------
+File:
+  [MyPractice\week2\day1_langchain_vs_litellm.py]
+
+Functions Inside & What They Do:
+  • lec42_day1_demo_direct_sdk(prompt)
+      - Calls raw OpenAI SDK client.chat.completions.create().
+      - Illustrates why direct SDKs create vendor lock-in.
+
+  • lec42_day1_demo_litellm(prompt)
+      - Calls LiteLLM completion() gateway.
+      - Demonstrates 0-code model switching (OpenAI to Groq/Claude/Gemini).
+      - Demonstrates built-in USD cost tracking and real-time token streaming.
+
+  • lec42_day1_demo_langchain(topic)
+      - Builds a 2-step LangChain LCEL pipeline:
+        PromptTemplate | Model | StrOutputParser
+      - Demonstrates chain orchestration and streaming.
+
+  • lec42_day1_print_decision_matrix()
+      - Prints a comprehensive comparison table showing when to choose
+        LangChain vs LiteLLM vs a Hybrid architecture in real projects.
+
+When to Run:
+  When you want to run the complete end-to-end Lecture 42 lesson script.
+
+PowerShell Command:
+  & "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice\.venv\Scripts\python.exe" "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice\week2\day1_langchain_vs_litellm.py"
+
+Expected Output:
+  - Section 1: Raw OpenAI response & latency
+  - Section 2: LiteLLM response, token & cost breakdown, live streamed rhyme
+  - Section 3: LangChain multi-step LCEL roadmap output
+  - Section 4: Prompt Caching test execution
+  - Section 5: Formatted decision matrix table
+
+
+--------------------------------------------------------------------------------
+PART 4: 4-LAYER PRODUCTION BACKEND (FastAPI + Swagger UI)
+--------------------------------------------------------------------------------
+Files:
+  • Route:      [MyPractice\src\routes\frameworks.py]
+  • Controller: [MyPractice\src\controllers\frameworks.py]
+  • Service:    [MyPractice\src\services\framework_comparison.py]
+  • Schemas:    [MyPractice\src\schemas\frameworks.py]
+
+Service Functions & What They Do:
+  • compare_frameworks_service(prompt, model_openai)
+      - Runs both LiteLLM and LangChain side-by-side on the same prompt.
+      - Calculates latency, token usage, cost in USD, and returns a benchmark JSON.
+
+  • run_litellm_gateway_service(prompt, model)
+      - Wraps LiteLLM call in a production API response with cost & tokens.
+
+  • run_langchain_pipeline_service(prompt)
+      - Wraps a 2-step LangChain LCEL chain in a production API response.
+
+When to Run:
+  When you want to test the interactive REST API through Swagger UI in your browser.
+
+PowerShell Command:
+  cd "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice"
+  .\.venv\Scripts\uvicorn.exe src.main:app --reload
+
+Browser Verification:
+  - Open: http://127.0.0.1:8000/docs
+  - Tag:  "Lec 42: Day 1 — LangChain vs LiteLLM"
+  - Endpoints:
+      * POST /frameworks/litellm   (Returns tokens, cost, latency)
+      * POST /frameworks/langchain (Returns LCEL analysis & roadmap)
+      * POST /frameworks/compare   (Returns side-by-side benchmark)
+
+
+--------------------------------------------------------------------------------
+PART 5: AUTOMATED REGRESSION & UNIT TEST SUITE
+--------------------------------------------------------------------------------
+File:
+  [MyPractice\week2\day1\practice.py]
+
+Functions Inside & What They Do:
+  • test_frontier_models()      - Tests GPT-4o-mini and OpenAI compatibility
+  • test_system_prompting()     - Tests system vs user roles
+  • test_structured_outputs()   - Tests Pydantic schema validation
+  • test_multi_agent_flow()     - Tests agent handoffs
+  • test_framework_comparison() - Tests Lecture 42 framework comparison service
+
+When to Run:
+  When you want to verify that the entire Week 2 Day 1 codebase passes all tests.
+
+PowerShell Command:
+  & "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice\.venv\Scripts\python.exe" "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice\week2\day1\practice.py"
+
+Expected Output:
+  - Test 1 PASSED
+  - Test 2 PASSED
+  - Test 3 PASSED
+  - Test 4 PASSED
+  - Test 5 PASSED
+  - Test 6 [Lec 42: Day 1 Framework Comparison] PASSED (Status 200)
+
+
+================================================================================
+                    QUICK SUMMARY CHEATSHEET BY GOAL
+================================================================================
+| What you want to do                   | File to run                  |
+|---------------------------------------|------------------------------|
+| Check Hamlet & Token/Cost lines       | week2\check_hamlet_gemini.py |
+| Test Prompt Caching (Cold vs Warm)    | week2\demo_prompt_caching.py |
+| Run Full Lec 42 LangChain vs LiteLLM  | week2\day1_langchain_vs_litellm.py |
+| Launch Web Swagger UI (Browser)       | uvicorn src.main:app --reload|
+| Run All Week 2 Day 1 Unit Tests       | week2\day1\practice.py       |
+================================================================================

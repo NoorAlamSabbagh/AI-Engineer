@@ -9,11 +9,16 @@ from pydantic import BaseModel
 from openai import OpenAI
 from src.routes.website import router as website_router
 from src.routes.conversation import router as conversation_router
+from src.routes.models import router as models_router
+from src.routes.multi_agent import router as multi_agent_router
+# [Lec 42: Day 1] Import LangChain vs LiteLLM frameworks router
+from src.routes.frameworks import router as frameworks_router
 
 # 2. Initialize FastAPI app
 app = FastAPI(
     title="AI Engineering Practice API",
-    version="1.0.0"
+    description="Hands-on practice API implementing clean 4-layer architecture for Frontier Model APIs, Local Ollama, Streaming, Multi-Agent Systems, LangChain, and LiteLLM.",
+    version="2.1.0"
 )
 
 # 3. Initialize OpenAI client
@@ -24,9 +29,13 @@ client = OpenAI(api_key=api_key)
 class PromptRequest(BaseModel):
     prompt: str
 
-# Register the website router
+# Register application routers
 app.include_router(website_router)
 app.include_router(conversation_router)
+app.include_router(models_router)
+app.include_router(multi_agent_router)
+# [Lec 42: Day 1] Register LangChain vs LiteLLM frameworks endpoints
+app.include_router(frameworks_router)
 
 # 5. Existing Health Check (GET)
 @app.get("/health")

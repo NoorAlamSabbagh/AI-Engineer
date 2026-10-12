@@ -139,5 +139,22 @@ uvicorn src.main:app --reload
     4. FastAPI Swagger UI API (`uvicorn src.main:app --reload`)
     5. Regression Unit Test Suite (`practice.py`)
 
+### 14. OpenAI Prompt Caching Deep-Dive (`Markdown Cell 68`)
+- **Objective**: Verify the 4 core rules of OpenAI prompt caching (threshold, prefix match, zero-config, 4x discount).
+- **Dedicated Script**: [MyPractice/week2/demo_openai_prompt_caching.py](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/demo_openai_prompt_caching.py)
+- **Verified Findings**:
+  - Test 1: Short prompts (<1,024 tokens) return `cached_tokens = 0`.
+  - Test 2: Request 1 primes the cache (`cached_tokens = 0`, cost: `0.0793 cents`).
+  - Test 3: Request 2 hits the cache with exact prefix match (`cached_tokens = 5,120`, cost: `0.0403 cents`, **49.2% discount**).
+
+### 15. Transition: Week 2 Day 2 Readiness ("Gradio Day!")
+- **Topic**: Building Interactive User Interfaces with Gradio (Simple Chat, Streaming, Themes, LLM integrations).
+- **Dependencies Installed**:
+  - `gradio>=6.30.0` installed into `.venv`.
+  - Updated [MyPractice/requirements.txt](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/requirements.txt).
+- **Course Notebook**: [llm_engineering-main/week2/day2.ipynb](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/llm_engineering-main/week2/day2.ipynb).
+- **Next Practice Target**: Create `MyPractice/week2/day2/` practice modules, standalone Gradio apps (`app.py`), and FastAPI mounting.
+
+
 
 

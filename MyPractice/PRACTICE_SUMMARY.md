@@ -455,4 +455,21 @@ python week2/day1/practice.py
 
 # 2. Lec 42: Day 1 — LangChain vs LiteLLM Comprehensive Suite
 python week2/day1_langchain_vs_litellm.py
+
+# 3. Baseline Hamlet & Token/Cost Check (Cells 59-62)
+python week2/check_hamlet_gemini.py
+
+# 4. LiteLLM Pro-Feature: Prompt Caching Walkthrough (Cells 63-67)
+python week2/demo_prompt_caching.py
+
+# 5. OpenAI Prompt Caching Deep-Dive (Prefix Matching & Thresholds)
+python week2/demo_openai_prompt_caching.py
 ```
+
+---
+
+## 🎨 PREVIEW: WEEK 2 • DAY 2 ("Gradio Day!")
+- **Theme**: Building Interactive User Interfaces with Gradio (Simple Chat, Custom Themes, Streaming).
+- **Core Library**: `gradio>=6.30.0` (installed and configured in `.venv`).
+- **Upcoming Milestone**: Creating interactive web UIs for your LLM agents and mounting Gradio into FastAPI.
+

@@ -14,7 +14,7 @@
 | **Week 1** | Foundations of LLMs & Web Intelligence | ✅ **Completed** | `week1/day1_intro.py` through `day5_brochure.py` | `POST /ask`, `POST /website/*` |
 | **Week 2 (Day 1 Part 1)** | Frontier APIs, Local Ollama, Reasoning & Agents | ✅ **Completed** | `week2/day1/practice.py` | `POST /models/*`, `POST /multi-agent/*` |
 | **Week 2 (Lec 42: Day 1)** | **LangChain vs LiteLLM: Choosing the Right Framework** | ✅ **Completed** | `week2/day1_langchain_vs_litellm.py` | `POST /frameworks/*` |
-| **Week 2 (Day 2)** | Gradio UI Framework & Interactive Frontends | 🟡 **Next Up** | `week2/day2_gradio.py` | Port `7860` (Gradio) |
+| **Week 2 (Day 2)** | **Gradio Web UIs, Streaming & Brochure App** | 🟢 **Ready for Practice** | `week2/day2/` (Labs 1, 2, 3 & Dashboard) | Ports `7860`, `7861`, `7862` |
 | **Week 2 (Day 3)** | Conversational AI & Memory Chatbots | ⚪ *Queued* | `week2/day3_chatbot.py` | `POST /conversation/*` |
 | **Week 2 (Day 4 & 5)** | Capstone Airline AI Customer Support Assistant | ⚪ *Queued* | `week2/day4_airline_assistant.py` | SQLite + Gradio UI |
 | **Weeks 3 – 8** | RAG, Vector Stores, Fine-Tuning, Agents & Deployment | ⚪ *Queued* | Weeks 3 to 8 modules | ChromaDB, Modal, LangGraph |
@@ -45,9 +45,9 @@
 | **Lec 31 – 35** | Day 1 | Reasoning Models & Inference-Time Scaling (`gpt-5-nano`) | [`week2/day1/practice.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day1/practice.py) | `POST /models/query`<br>*(Pushkin Bookworm & Probability Puzzles)* | ✅ Completed |
 | **Lec 36 – 38** | Day 1 | Real-Time Token Streaming & Multi-Model Latency Benchmarking | [`week2/day1/practice.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day1/practice.py) | `POST /models/stream`<br>`POST /models/benchmark` | ✅ Completed |
 | **Lec 39 – 41** | Day 1 | Autonomous Multi-Agent Conversations (2-Agent Debate & 3-Way Panel) | [`week2/day1/practice.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day1/practice.py) | `POST /multi-agent/debate`<br>`POST /multi-agent/three-way` | ✅ Completed |
-| **Lec 42** | **Day 1** | **LangChain vs LiteLLM: Choosing the Right LLM Framework** | [**`week2/day1_langchain_vs_litellm.py`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day1_langchain_vs_litellm.py)<br>[**`week2/check_hamlet_gemini.py`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/check_hamlet_gemini.py)<br>[**`week2/demo_prompt_caching.py`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/demo_prompt_caching.py)<br>[**`POWERSHELL_RUN_GUIDE.txt`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/POWERSHELL_RUN_GUIDE.txt) | `python week2/day1_langchain_vs_litellm.py`<br>`python week2/demo_prompt_caching.py`<br>`POST /frameworks/compare` | ✅ **Completed** |
-| **Lec 43 – 47** | Day 2 | Building User Interfaces with Gradio (Simple Chat, Custom Themes) | *Upcoming* | `gradio app.py` (Port 7860) | 🟡 Next Up |
-| **Lec 48 – 52** | Day 3 | Conversational AI Assistants & Session Chat History | *Upcoming* | Gradio + FastAPI | ⚪ Queued |
+| **Lec 42 – 43** | **Day 1** | **LangChain vs LiteLLM: Choosing the Right Framework & Prompt Caching** | [**`week2/day1_langchain_vs_litellm.py`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day1_langchain_vs_litellm.py)<br>[**`week2/check_hamlet_gemini.py`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/check_hamlet_gemini.py)<br>[**`week2/demo_prompt_caching.py`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/demo_prompt_caching.py)<br>[**`POWERSHELL_RUN_GUIDE.txt`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/POWERSHELL_RUN_GUIDE.txt) | `python week2/day1_langchain_vs_litellm.py`<br>`python week2/demo_prompt_caching.py`<br>`POST /frameworks/compare` | ✅ **Completed** |
+| **Lec 44 – 48** | **Day 2** | **Building Web UIs with Gradio (Basics, Streaming & Brochure App)** | [**`week2/day2/`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day2/README.md) | `python week2/day2/01_gradio_basics.py`<br>`python week2/day2/02_llm_streaming.py`<br>`python week2/day2/03_brochure_generator.py`<br>`python week2/day2/04_full_dashboard.py` | 🟢 **Ready for Practice** |
+| **Lec 49 – 52** | Day 3 | Conversational AI Assistants & Session Chat History | *Upcoming* | Gradio + FastAPI | ⚪ Queued |
 | **Lec 53 – 60** | Day 4 & 5 | Airline AI Customer Support Assistant (SQLite + Tools) | *Upcoming* | Full Airline Project | ⚪ Queued |
 
 ---
@@ -106,3 +106,7 @@ uvicorn src.main:app --reload
 - `POST /frameworks/litellm` $\to$ **[Lec 42]** LiteLLM Universal Gateway
 - `POST /frameworks/langchain` $\to$ **[Lec 42]** LangChain LCEL Declarative Pipeline
 - `POST /frameworks/compare` $\to$ **[Lec 42]** Side-by-Side Head-to-Head Benchmark
+- `GET  /ui/info` $\to$ **[Lec 44–48]** Gradio Mounted UI Status & Discovery
+- `POST /ui/transform` $\to$ **[Lec 44–45]** Text Transformation Algorithm
+- `POST /ui/brochure` $\to$ **[Lec 48]** Web Scraper & Executive Brochure Generator
+- `GET  /gradio` $\to$ **[Lec 44–48]** Interactive Mounted Gradio Web UI in FastAPI

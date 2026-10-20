@@ -13,12 +13,16 @@ from src.routes.models import router as models_router
 from src.routes.multi_agent import router as multi_agent_router
 # [Lec 42: Day 1] Import LangChain vs LiteLLM frameworks router
 from src.routes.frameworks import router as frameworks_router
+# [Lec 44–48: Day 2] Import Gradio UI router & service for Swagger Docs & Web UI
+import gradio as gr
+from src.routes.gradio_ui import router as gradio_router
+from src.services.gradio_service import create_gradio_app
 
 # 2. Initialize FastAPI app
 app = FastAPI(
     title="AI Engineering Practice API",
-    description="Hands-on practice API implementing clean 4-layer architecture for Frontier Model APIs, Local Ollama, Streaming, Multi-Agent Systems, LangChain, and LiteLLM.",
-    version="2.1.0"
+    description="Hands-on practice API implementing clean 4-layer architecture for Frontier Model APIs, Local Ollama, Streaming, Multi-Agent Systems, LangChain, LiteLLM, and Gradio Web UIs (Lec 44–48).",
+    version="2.2.0"
 )
 
 # 3. Initialize OpenAI client
@@ -36,6 +40,12 @@ app.include_router(models_router)
 app.include_router(multi_agent_router)
 # [Lec 42: Day 1] Register LangChain vs LiteLLM frameworks endpoints
 app.include_router(frameworks_router)
+# [Lec 44–48: Day 2] Register Gradio UI endpoints
+app.include_router(gradio_router)
+
+# Mount interactive Gradio UI directly onto FastAPI at /gradio
+gradio_interface = create_gradio_app()
+app = gr.mount_gradio_app(app, gradio_interface, path="/gradio")
 
 # 5. Existing Health Check (GET)
 @app.get("/health")

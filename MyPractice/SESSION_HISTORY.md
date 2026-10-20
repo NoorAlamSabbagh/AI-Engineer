@@ -147,13 +147,17 @@ uvicorn src.main:app --reload
   - Test 2: Request 1 primes the cache (`cached_tokens = 0`, cost: `0.0793 cents`).
   - Test 3: Request 2 hits the cache with exact prefix match (`cached_tokens = 5,120`, cost: `0.0403 cents`, **49.2% discount**).
 
-### 15. Transition: Week 2 Day 2 Readiness ("Gradio Day!")
-- **Topic**: Building Interactive User Interfaces with Gradio (Simple Chat, Streaming, Themes, LLM integrations).
-- **Dependencies Installed**:
-  - `gradio>=6.30.0` installed into `.venv`.
-  - Updated [MyPractice/requirements.txt](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/requirements.txt).
-- **Course Notebook**: [llm_engineering-main/week2/day2.ipynb](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/llm_engineering-main/week2/day2.ipynb).
-- **Next Practice Target**: Create `MyPractice/week2/day2/` practice modules, standalone Gradio apps (`app.py`), and FastAPI mounting.
+### 15. Week 2 Day 2: Gradio Web User Interfaces & Real-Time Streaming (Lec 44–48)
+- **Topic**: Building Interactive User Interfaces with Gradio (`gr.Interface`, `gr.Blocks`, `gr.TabbedInterface`).
+- **Lecture Range**: **Lectures 44 to 48** (Course syllabus: Gradio Day).
+- **Modules Created in `MyPractice/week2/day2/`**:
+  1. [`01_gradio_basics.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day2/01_gradio_basics.py): Python functions to UI components (`fn`, `inputs`, `outputs`), text transforms, input styling.
+  2. [`02_llm_streaming.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day2/02_llm_streaming.py): Real-time token streaming using Python generators (`yield`), model switcher (OpenAI & Ollama).
+  3. [`03_brochure_generator.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day2/03_brochure_generator.py): Day 2 Capstone — Web scraping (BeautifulSoup) + live streaming Markdown executive company brochure generator.
+  4. [`04_full_dashboard.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day2/04_full_dashboard.py): All-in-one multi-tab Gradio dashboard running all 3 labs simultaneously.
+  5. [`scraper.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day2/scraper.py): Self-contained web content scraper with sanitization.
+  6. [`README.md`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day2/README.md): Step-by-step beginner guide with exact PowerShell execution commands.
+
 
 
 

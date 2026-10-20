@@ -178,7 +178,8 @@ with gr.Blocks() as interface_streaming:
 
     gr.Examples(
         examples=[
-            ["Explain the Transformer attention mechanism to a 10-year-old child.", DEFAULT_SYSTEM_PROMPT, "OpenAI (gpt-4o-mini)", 0.7],
+            ["Explain the Transformer architecture to a layperson", DEFAULT_SYSTEM_PROMPT, "OpenAI (gpt-4o-mini)", 0.7],
+            ["Explain the Transformer architecture to an aspiring AI engineer", DEFAULT_SYSTEM_PROMPT, "OpenAI (gpt-4o-mini)", 0.7],
             ["What is the key difference between RAG and Fine-tuning? Use a table.", DEFAULT_SYSTEM_PROMPT, "OpenAI (gpt-4o-mini)", 0.3],
             ["Write a Python function with type hints to calculate token latency.", DEFAULT_SYSTEM_PROMPT, "OpenAI (gpt-4o-mini)", 0.2]
         ],

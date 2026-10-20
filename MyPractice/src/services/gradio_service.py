@@ -169,9 +169,73 @@ def stream_brochure_generator(company_name: str, url: str, model_choice: str) ->
         yield f"❌ Error: {str(e)}"
 
 
+DEFAULT_SYSTEM_PROMPT = (
+    "You are a helpful, expert AI Engineer mentor. "
+    "Provide clear, encouraging, structured explanations using Markdown, bullet points, and code snippets when relevant."
+)
+
+
+def stream_llm(
+    prompt: str,
+    system_prompt: str,
+    model_choice: str,
+    temperature: float
+) -> Generator[str, None, None]:
+    """
+    Calls LLM and yields tokens in real time using Python generators (`yield`).
+    Gradio detects each yield and progressively updates the Markdown display (Lec 46 & 47).
+    """
+    if not prompt.strip():
+        yield "⚠️ Please enter a prompt above to start streaming."
+        return
+
+    messages = [
+        {"role": "system", "content": system_prompt or DEFAULT_SYSTEM_PROMPT},
+        {"role": "user", "content": prompt}
+    ]
+
+    accumulated = ""
+
+    # Option A: Local Ollama
+    if "Ollama" in model_choice:
+        try:
+            stream = ollama_client.chat.completions.create(
+                model="llama3.2",
+                messages=messages,
+                temperature=temperature,
+                stream=True
+            )
+            for chunk in stream:
+                token = chunk.choices[0].delta.content or ""
+                accumulated += token
+                yield accumulated
+            return
+        except Exception as e:
+            yield f"⚠️ Ollama error: {e}. Ensure `ollama serve` is running. Falling back to OpenAI."
+
+    # Option B: OpenAI
+    if not client or not openai_api_key:
+        yield "❌ OpenAI API key is missing in your .env file! Please set `OPENAI_API_KEY`."
+        return
+
+    try:
+        stream = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=messages,
+            temperature=temperature,
+            stream=True
+        )
+        for chunk in stream:
+            token = chunk.choices[0].delta.content or ""
+            accumulated += token
+            yield accumulated
+    except Exception as e:
+        yield f"❌ Error: {str(e)}"
+
+
 def create_gradio_app() -> gr.TabbedInterface:
-    """Builds the 3-tab Gradio UI suite for direct mounting onto FastAPI (Lec 44–48)."""
-    # Tab 1: Basics
+    """Builds the complete 3-tab Gradio UI suite for direct mounting onto FastAPI (Lec 44–48)."""
+    # Tab 1: Basics (Lec 44 & 45)
     tab1 = gr.Interface(
         fn=transform_text,
         inputs=[
@@ -187,8 +251,55 @@ def create_gradio_app() -> gr.TabbedInterface:
         flagging_mode="never"
     )
 
-    # Tab 2: Brochure Generator
-    tab2 = gr.Interface(
+    # Tab 2: Real-Time LLM Token Streaming (Lec 46 & 47)
+    with gr.Blocks() as tab2:
+        gr.Markdown("### ⚡ Real-Time LLM Token Streaming (`yield` generator)")
+        with gr.Row():
+            with gr.Column(scale=1):
+                stream_input = gr.Textbox(
+                    label="Your Question / Prompt",
+                    placeholder="e.g. Explain transformers using an intuitive analogy...",
+                    lines=4
+                )
+                with gr.Accordion("⚙️ Model Parameters & Persona", open=False):
+                    sys_input = gr.Textbox(label="System Prompt", value=DEFAULT_SYSTEM_PROMPT, lines=2)
+                    model_drop = gr.Dropdown(
+                        choices=["OpenAI (gpt-4o-mini)", "Local Ollama (llama3.2)"],
+                        value="OpenAI (gpt-4o-mini)",
+                        label="Model Engine"
+                    )
+                    temp_slide = gr.Slider(minimum=0.0, maximum=1.5, value=0.7, step=0.1, label="Temperature")
+                
+                stream_btn = gr.Button("🚀 Ask AI (Streaming)", variant="primary")
+                stream_clear = gr.Button("🗑️ Clear")
+
+            with gr.Column(scale=1):
+                stream_output = gr.Markdown(label="AI Response", value="*The streamed response will type here live...*")
+
+        stream_btn.click(
+            fn=stream_llm,
+            inputs=[stream_input, sys_input, model_drop, temp_slide],
+            outputs=stream_output
+        )
+        stream_input.submit(
+            fn=stream_llm,
+            inputs=[stream_input, sys_input, model_drop, temp_slide],
+            outputs=stream_output
+        )
+        stream_clear.click(lambda: ("", "*Cleared.*"), outputs=[stream_input, stream_output])
+
+        gr.Examples(
+            examples=[
+                ["Explain the Transformer architecture to a layperson", DEFAULT_SYSTEM_PROMPT, "OpenAI (gpt-4o-mini)", 0.7],
+                ["Explain the Transformer architecture to an aspiring AI engineer", DEFAULT_SYSTEM_PROMPT, "OpenAI (gpt-4o-mini)", 0.7],
+                ["What is the key difference between RAG and Fine-tuning? Use a table.", DEFAULT_SYSTEM_PROMPT, "OpenAI (gpt-4o-mini)", 0.3],
+                ["Write a Python function with type hints to calculate token latency.", DEFAULT_SYSTEM_PROMPT, "OpenAI (gpt-4o-mini)", 0.2]
+            ],
+            inputs=[stream_input, sys_input, model_drop, temp_slide]
+        )
+
+    # Tab 3: Brochure Generator (Lec 48)
+    tab3 = gr.Interface(
         fn=stream_brochure_generator,
         inputs=[
             gr.Textbox(label="🏢 Company Name", placeholder="e.g. Hugging Face, Stripe, FastAPI"),
@@ -197,11 +308,21 @@ def create_gradio_app() -> gr.TabbedInterface:
         ],
         outputs=gr.Markdown(label="Generated Executive Brochure", value="*Brochure will stream live here...*"),
         title="🏢 AI Company Brochure Generator",
+        examples=[
+            ["Hugging Face", "https://huggingface.co", "OpenAI (gpt-4o-mini)"],
+            ["FastAPI", "https://fastapi.tiangolo.com", "OpenAI (gpt-4o-mini)"],
+            ["Ollama", "https://ollama.com", "OpenAI (gpt-4o-mini)"]
+        ],
         flagging_mode="never"
     )
 
     return gr.TabbedInterface(
-        interface_list=[tab1, tab2],
-        tab_names=["🚀 1. Gradio Basics (Lec 44-45)", "🏢 2. Brochure Generator (Lec 48)"],
-        title="🎓 Week 2 • Day 2 — Gradio Web UI Master Suite"
+        interface_list=[tab1, tab2, tab3],
+        tab_names=[
+            "🚀 1. Gradio Basics (Lec 44-45)",
+            "⚡ 2. LLM Streaming (Lec 46-47)",
+            "🏢 3. Brochure Generator (Lec 48)"
+        ],
+        title="🎓 Week 2 • Day 2 — Gradio Web UI Master Suite (Lec 44–48)"
     )
+

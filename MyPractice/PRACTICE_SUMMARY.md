@@ -596,3 +596,27 @@ python week2/day4/practice.py
 3. **Tab 3: SQLite Database Tools (Lec 55 — Read & Write)** — Real SQLite table queries (`SELECT`) and fare updates (`UPDATE`) with live table view.
 4. **Tab 4: Autonomous Airline Agent (Lec 56 Capstone)** — Multi-step `while` loop agent capable of complex reasoning, multi-city comparisons, and database updates inside `gr.ChatInterface`.
 
+---
+
+## 🤖 WEEK 2 • DAY 5: Introduction to Agentic AI & Building Multi-Tool Workflows (Lec 57–61)
+- **Status**: 🟢 **Ready for Practice**
+- **Folder**: [`MyPractice/week2/day5/`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day5/README.md)
+- **Core Concepts**: What makes an AI "Agentic" (autonomous goal achievement vs passive chatbot), Gradio UI Hierarchy (`gr.Interface` vs `gr.ChatInterface` vs `gr.Blocks`), Multi-Modal Tool Handshake (Text + SQLite + DALL-E / PIL Pop-Art Postcards + OpenAI TTS Audio), Event Chaining with `.then()`, FlightAI Multimodal Capstone, and Simon Willison's Frontier SVG AI Benchmark with animated CSS keyframe revealer (`revealer.py`).
+
+### 💻 Week 2 Day 5 Terminal Runner (PowerShell)
+
+```powershell
+cd "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice"
+.\.venv\Scripts\Activate.ps1
+
+# Launch the Unified Agentic AI & Multi-Tool Dashboard (Lec 57–61, Port 7860)
+python week2/day5/practice.py
+```
+
+### 🧪 Labs Included in `week2/day5/practice.py`:
+1. **Tab 1: Gradio UI Hierarchy Comparison (Lec 57)** — Architectural breakdown comparing `gr.Interface` (pure I/O function), `gr.ChatInterface` (conversational history wrapper), and `gr.Blocks` (fine-grained bespoke canvas).
+2. **Tab 2: Multi-Modal Tools: Artist & Talker (Lec 58)** — Standalone generators for image generation (`artist(city)` creating pop-art travel postcards via DALL-E with local PIL fallback) and speech synthesis (`talker(text)` via OpenAI TTS `alloy` voice).
+3. **Tab 3: Agentic Multi-Tool Workflow (Lec 59)** — Autonomous reasoning engine that combines SQLite queries with destination extraction and multi-modal tool dispatching.
+4. **Tab 4: FlightAI Grand Capstone (Lec 60)** — Full-featured travel assistant featuring side-by-side Chatbot and Destination Postcard preview, autoplaying Audio advice, and event chaining with `.then()`.
+5. **Tab 5: Special Extra: Frontier SVG Artist & Revealer (Lec 61)** — Simon Willison's SVG benchmark ("pelican riding a bicycle" / "panda rollerblading to work") evaluating spatial reasoning and vector coordinate math, paired with an animated SVG keyframe revealer (`revealer.py`).
+

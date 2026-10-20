@@ -180,3 +180,18 @@ uvicorn src.main:app --reload
      - **Tab 3**: Live SQLite database queries (`SELECT`) and price updates (`UPDATE`) with live table inspector.
      - **Tab 4 (Capstone)**: Autonomous multi-step Airline Agent powered by a `while` loop inside `gr.ChatInterface`.
   3. `prices.db`: Auto-initialized SQLite database storing persistent flight fares.
+
+### 18. Week 2 Day 5: Agentic AI, Multi-Tool Workflows & Frontier SVG Revealer (Lec 57–61)
+- **Topic**: Agentic AI Foundations, Gradio Hierarchy (`gr.Interface` vs `gr.ChatInterface` vs `gr.Blocks`), Event Pipelines (`.then()`), Multi-Modal Workflows, and Frontier SVG AI Benchmark.
+- **Lecture Range**: **Lectures 57 to 61** (`day5.ipynb` & `extra.ipynb`).
+- **Modules Created in `MyPractice/week2/day5/`**:
+  1. [`README.md`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day5/README.md): Layman guide explaining Agentic AI (the Butler vs the Calculator), Gradio UI Hierarchy, the FlightAI Multimodal pipeline, and Simon Willison's SVG benchmark.
+  2. [`revealer.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day5/revealer.py): SVG XML parser and `@keyframes reveal` CSS injector providing staggered, animated vector drawing in the browser.
+  3. [`practice.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day5/practice.py): Master 5-tab Gradio app:
+     - **Tab 1 (Lec 57)**: Gradio UI Hierarchy comparison matrix.
+     - **Tab 2 (Lec 58)**: Standalone multi-modal generators: `artist(city)` (DALL-E pop-art with PIL fallback) and `talker(text)` (OpenAI TTS audio).
+     - **Tab 3 (Lec 59)**: Autonomous Multi-Tool Workflow coordinating SQLite tool calls and destination city extraction.
+     - **Tab 4 (Lec 60 Capstone)**: FlightAI Grand Capstone — custom `gr.Blocks` dashboard with side-by-side Chatbot, dynamic pop-art postcard preview, autoplaying TTS audio, and `.then()` event chaining.
+     - **Tab 5 (Lec 61 Special Extra)**: Frontier SVG Artist & Animated Revealer featuring Simon Willison's pelican and course panda benchmarks with live keyframe animation.
+  4. `prices.db`: Auto-initialized persistent SQLite database for flight queries and updates.
+

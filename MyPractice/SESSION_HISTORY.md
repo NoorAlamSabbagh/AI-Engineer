@@ -158,7 +158,13 @@ uvicorn src.main:app --reload
   5. [`scraper.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day2/scraper.py): Self-contained web content scraper with sanitization.
   6. [`README.md`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day2/README.md): Step-by-step beginner guide with exact PowerShell execution commands.
 
-
-
-
-
+### 16. Week 2 Day 3: Building Chat UIs with Gradio (Lec 49–52)
+- **Topic**: Conversational AI Assistants & Multi-Turn State (`gr.ChatInterface`).
+- **Lecture Range**: **Lectures 49 to 52** (`day3.ipynb`).
+- **Modules Created in `MyPractice/week2/day3/`**:
+  1. [`README.md`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day3/README.md): Beginner guide with layman analogies (the Goldfish Memory of LLMs, the Memory Sandwich, streaming).
+  2. [`practice.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day3/practice.py): Single master file containing all 4 labs:
+     - **Lab 1**: `gr.ChatInterface` callback mechanics and history inspection.
+     - **Lab 2**: Memory Sandwich multi-turn chat with `gpt-4o-mini`.
+     - **Lab 3**: Real-time typewriter token streaming (`yield`).
+     - **Lab 4 (Capstone)**: Clothing store sales assistant with 60% off hats, 50% off other items, shoe guardrail, and dynamic belt injection.

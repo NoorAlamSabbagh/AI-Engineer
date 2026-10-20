@@ -550,5 +550,25 @@ python week2/day2/practice.py
 ```
 - **Response**: Returns `scraped_characters` and structured `brochure_markdown` containing Executive Overview, Problem & Value Proposition, Flagship Products, Target Market, and Next Steps.
 
+---
 
+## 💬 WEEK 2 • DAY 3: Building Chat UIs with Gradio (Lec 49–52)
+- **Status**: 🟢 **Ready for Practice**
+- **Folder**: [`MyPractice/week2/day3/`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day3/README.md)
+- **Core Concepts**: `gr.ChatInterface`, callback structure `(message, history)`, the "Memory Sandwich" formula, real-time token streaming (`yield`), and retail sales assistant persona with dynamic guardrails.
 
+### 💻 Week 2 Day 3 Terminal Runner (PowerShell)
+
+```powershell
+cd "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice"
+.\.venv\Scripts\Activate.ps1
+
+# Launch the Unified Conversational AI Dashboard (Lec 49–52, Port 7860)
+python week2/day3/practice.py
+```
+
+### 🧪 Labs Included in `week2/day3/practice.py`:
+1. **Lab 1: Chatbot 101 Basics** — Explores `(message, history)` plumbing and turn counter.
+2. **Lab 2: Multi-Turn Memory Chat** — Bundles history into OpenAI API calls so context is preserved.
+3. **Lab 3: Live Token Streaming** — Typewriter live text streaming in chat bubbles via `yield`.
+4. **Lab 4: Clothing Store Sales Assistant (Capstone)** — Persona with 60% off hats, 50% off other items, shoe guardrail, and dynamic out-of-stock injection for belts.

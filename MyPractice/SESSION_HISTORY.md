@@ -168,3 +168,15 @@ uvicorn src.main:app --reload
      - **Lab 2**: Memory Sandwich multi-turn chat with `gpt-4o-mini`.
      - **Lab 3**: Real-time typewriter token streaming (`yield`).
      - **Lab 4 (Capstone)**: Clothing store sales assistant with 60% off hats, 50% off other items, shoe guardrail, and dynamic belt injection.
+
+### 17. Week 2 Day 4: How LLM Tool Calling Really Works (Lec 53–56)
+- **Topic**: Function / Tool Calling Architecture, Handshakes, Parallel Tools, SQLite DB & Autonomous Agents.
+- **Lecture Range**: **Lectures 53 to 56** (`day4.ipynb`).
+- **Modules Created in `MyPractice/week2/day4/`**:
+  1. [`README.md`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day4/README.md): Step-by-step conceptual guide explaining why tool calling is "No Magic, Just Prompts" with sequence diagrams.
+  2. [`practice.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day4/practice.py): Single master file containing all 4 labs:
+     - **Tab 1**: Baseline Airline Assistant (no tools) demonstrating model limitations.
+     - **Tab 2**: In-Memory tool calling with single and parallel multi-city queries.
+     - **Tab 3**: Live SQLite database queries (`SELECT`) and price updates (`UPDATE`) with live table inspector.
+     - **Tab 4 (Capstone)**: Autonomous multi-step Airline Agent powered by a `while` loop inside `gr.ChatInterface`.
+  3. `prices.db`: Auto-initialized SQLite database storing persistent flight fares.

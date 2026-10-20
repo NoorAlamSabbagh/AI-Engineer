@@ -572,3 +572,27 @@ python week2/day3/practice.py
 2. **Lab 2: Multi-Turn Memory Chat** — Bundles history into OpenAI API calls so context is preserved.
 3. **Lab 3: Live Token Streaming** — Typewriter live text streaming in chat bubbles via `yield`.
 4. **Lab 4: Clothing Store Sales Assistant (Capstone)** — Persona with 60% off hats, 50% off other items, shoe guardrail, and dynamic out-of-stock injection for belts.
+
+---
+
+## 🛠️ WEEK 2 • DAY 4: How LLM Tool Calling Really Works (Lec 53–56)
+- **Status**: 🟢 **Ready for Practice**
+- **Folder**: [`MyPractice/week2/day4/`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day4/README.md)
+- **Core Concepts**: Demystifying tool calling ("No Magic, Just Prompts!"), JSON Schema function definitions, the 4-step tool handshake (`finish_reason == 'tool_calls'`), parallel multi-tool execution, persistent SQLite database integration (`prices.db`), and autonomous multi-step reasoning (`while` loop).
+
+### 💻 Week 2 Day 4 Terminal Runner (PowerShell)
+
+```powershell
+cd "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice"
+.\.venv\Scripts\Activate.ps1
+
+# Launch the Unified Tool Calling & Airline Agent Dashboard (Lec 53–56, Port 7860)
+python week2/day4/practice.py
+```
+
+### 🧪 Labs Included in `week2/day4/practice.py`:
+1. **Tab 1: Baseline Airline Assistant (Lec 53 — No Tools)** — Demonstrates model limitations and hallucinations when asked for live ticket prices without tools.
+2. **Tab 2: In-Memory Tool Calling (Lec 54 — Parallel Calls)** — Tests JSON schema execution and parallel queries (e.g. comparing London, Paris, and Tokyo in one message).
+3. **Tab 3: SQLite Database Tools (Lec 55 — Read & Write)** — Real SQLite table queries (`SELECT`) and fare updates (`UPDATE`) with live table view.
+4. **Tab 4: Autonomous Airline Agent (Lec 56 Capstone)** — Multi-step `while` loop agent capable of complex reasoning, multi-city comparisons, and database updates inside `gr.ChatInterface`.
+

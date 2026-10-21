@@ -62,6 +62,7 @@
 | :--- | :---: | :--- | :--- | :--- | :---: |
 | **Lec 62 – 67** | **Day 1** | **Google Colab, Cloud GPUs, SDXL-Turbo, Refiner & SpeechT5** | [**`week3/day1/`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day1/README.md) | `python week3/day1/practice.py`<br>*(GPU Scan, SDXL-Turbo, 2-Stage Denoise, SpeechT5 & Economics)* | 🟢 **Ready for Practice** |
 | **Lec 68 – 71** | **Day 2** | **Hugging Face Pipelines for Quick AI Inference (NLP, Seq2Seq, Vision & Audio)** | [**`week3/day2/`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day2/README.md) | `python week3/day2/practice.py`<br>*(Sentiment, NER, QA, Translation, Zero-Shot & Multi-Modal)* | 🟢 **Ready for Practice** |
+| **Lec 72 – 75** | **Day 3** | **Tokenizers: BPE, Chat Templates & Comparing Llama, Phi-4, DeepSeek & QwenCoder** | [**`week3/day3/`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day3/README.md) | `python week3/day3/practice.py`<br>*(Chars vs Words vs Tokens, Chat Templates, 4-Model Comparison & Visualizer)* | 🟢 **Ready for Practice** |
 
 ---
 

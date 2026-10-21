@@ -674,3 +674,30 @@ python week3/day2/practice.py
 - [`day2_colab_original.ipynb`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day2/day2_colab_original.ipynb): 100% Verbatim clone extracted directly from Ed's Google Drive (`1aMaEw8A56xs0bRM4lu8z7ou18jqyybGm`).
 - [`colab_notebook.ipynb`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day2/colab_notebook.ipynb): Annotated edition with clean lecture boundaries (Lec 68 to 71).
 
+---
+
+## 🧩 WEEK 3 • DAY 3: Tokenizers & Chat Templates Master Suite (Lec 72–75)
+- **Status**: 🟢 **Ready for Practice**
+- **Folder**: [`MyPractice/week3/day3/`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day3/README.md)
+- **Core Concepts**: Byte-Pair Encoding (BPE), Characters vs Words vs Tokens, Vocabulary sizes (`len(tokenizer.vocab)`), Special delimiter tokens, The Crucial "Aha!" Moment (Why LLMs can't accept Python dicts), `apply_chat_template()`, and Cross-Model Tokenizer Benchmarks (Meta Llama 3.1 8B, Microsoft Phi-4, DeepSeek V3, and Alibaba Qwen 2.5 Coder).
+
+### 💻 Week 3 Day 3 Terminal Runner (PowerShell)
+
+```powershell
+cd "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice"
+.\.venv\Scripts\Activate.ps1
+
+# Launch the Unified Tokenizer & Chat Template Dashboard (Lec 72–75, Port 7862)
+python week3/day3/practice.py
+```
+
+### 🧪 Labs Included in `week3/day3/practice.py`:
+1. **Tab 1: Tokenizer Foundations (Lec 72)** — Real-time text analyzer comparing Character count, Word count, and Token count with compression ratios; alternating color pill chips for subword visual inspection; detailed Token ID inspection table.
+2. **Tab 2: The Chat Template "Aha!" Moment (Lec 73–74)** — Interactive prompt builder demonstrating how structured Python `messages` lists get formatted into raw string sequences with model-specific delimiters (`<|start_header_id|>...`, `<|im_start|>...`, `<｜User｜>...`); toggling `add_generation_prompt=True` to inspect the assistant response cue.
+3. **Tab 3: Comparing Frontier Tokenizers (Lec 75)** — Side-by-side benchmark across Meta Llama 3.1 (128k vocab), Microsoft Phi-4 (100k vocab), DeepSeek V3 (129k vocab), and Alibaba Qwen 2.5 Coder (152k vocab); includes Python code indentation tests demonstrating Qwen-Coder's single-token indent superpowers.
+4. **Tab 4: Token Probability & Prediction Visualizer (Ed's visualizer.py)** — Token-by-token branching tree displaying top chosen tokens alongside runner-up alternatives and percentage confidence probabilities; interactive temperature slider testing greedy vs stochastic decoding.
+
+### ☁️ Standalone Google Colab Notebooks:
+- [`day3_colab_original.ipynb`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day3/day3_colab_original.ipynb): 100% Verbatim clone extracted directly from Ed's Google Drive (`1WD6Y2N7ctQi1X9wa6rpkg8UfyA4iSVuz`).
+- [`colab_notebook.ipynb`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day3/colab_notebook.ipynb): Annotated edition with clean lecture boundaries (Lec 72 to 75).
+

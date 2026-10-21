@@ -220,3 +220,16 @@ uvicorn src.main:app --reload
      - **Tab 2 (Lec 69)**: Core Text NLP Studio (Dual-model Sentiment Comparison, Token Entity Recognition, Contextual Extractive QA).
      - **Tab 3 (Lec 70)**: Seq2Seq & Zero-Shot Studio (BART CNN Summarization, Helsinki-NLP MarianMT Translation, Zero-Shot NLI Classification, DistilGPT2 Generation).
      - **Tab 4 (Lec 71)**: Multi-Modal Studio (SDXL-Turbo text-to-image with fallback canvas, SpeechT5 neural audio generation).
+
+### 21. Week 3 Day 3: Tokenizers & Chat Templates (Lec 72–75)
+- **Topic**: Byte-Pair Encoding (BPE), Characters vs Words vs Tokens, Vocabulary sizes (`len(tokenizer.vocab)`), Special delimiter tokens, The Crucial "Aha!" Moment (Why LLMs can't accept Python dicts), `apply_chat_template()`, and Cross-Model Tokenizer Benchmarks (Meta Llama 3.1 8B, Microsoft Phi-4, DeepSeek V3, and Alibaba Qwen 2.5 Coder).
+- **Lecture Range**: **Lectures 72 to 75** (`day3.ipynb` & Colab).
+- **Modules Created in `MyPractice/week3/day3/`**:
+  1. [`README.md`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day3/README.md): Conceptual layman guide explaining why neural networks only operate on numerical tensors, how BPE balances character vs word tokenization, the structure of modern tokenizers, the chat template abstraction, and the mechanics of code indentation tokenization.
+  2. [`day3_colab_original.ipynb`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day3/day3_colab_original.ipynb): 100% verbatim clone of Ed's Google Colab notebook (`1WD6Y2N7ctQi1X9wa6rpkg8UfyA4iSVuz`) preserving all code, pip install flags, comments, and structure.
+  3. [`colab_notebook.ipynb`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day3/colab_notebook.ipynb): Clean, annotated edition organized into clear lecture divisions (Lec 72, 73, 74, 75) ready to run in Colab with gated model fallbacks.
+  4. [`practice.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day3/practice.py): Master 4-tab interactive Gradio dashboard running on Port 7862:
+     - **Tab 1 (Lec 72)**: Tokenizer Foundations (Live text analyzer, chars vs words vs tokens, compression metrics, colored pill chips, detailed Token ID table).
+     - **Tab 2 (Lec 73–74)**: The Chat Template "Aha!" Moment (Interactive prompt builder comparing Python dicts vs actual raw prompt string with special tags `<|start_header_id|>...`, `<|im_start|>...`, `<｜User｜>...`, generation prompt toggle).
+     - **Tab 3 (Lec 75)**: Comparing Frontier Tokenizers (Side-by-side benchmark of Llama 3.1, Phi-4, DeepSeek V3, and Qwen 2.5 Coder, with code indentation efficiency benchmark).
+     - **Tab 4 (visualizer.py)**: Token Probability & Prediction Visualizer (Branching tree of chosen tokens, runner-up alternatives, probabilities, and temperature dynamics).

@@ -620,3 +620,30 @@ python week2/day5/practice.py
 4. **Tab 4: FlightAI Grand Capstone (Lec 60)** — Full-featured travel assistant featuring side-by-side Chatbot and Destination Postcard preview, autoplaying Audio advice, and event chaining with `.then()`.
 5. **Tab 5: Special Extra: Frontier SVG Artist & Revealer (Lec 61)** — Simon Willison's SVG benchmark ("pelican riding a bicycle" / "panda rollerblading to work") evaluating spatial reasoning and vector coordinate math, paired with an animated SVG keyframe revealer (`revealer.py`).
 
+---
+
+## 🚀 WEEK 3 • DAY 1: Google Colab, Cloud GPUs & Open-Source Generative AI (Lec 62–67)
+- **Status**: 🟢 **Ready for Practice**
+- **Folder**: [`MyPractice/week3/day1/`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day1/README.md)
+- **Core Concepts**: Cloud GPU compute on Google Colab (Tesla T4 vs A100), Hugging Face Hub write access authentication (`HF_TOKEN`), Fast Latent Diffusion (SDXL-Turbo in 1–4 steps), 2-Stage Denoising Ensemble (Base 80% + Refiner 20%), Neural Text-to-Speech with Speaker Embeddings (SpeechT5 + CMU Arctic x-vectors), and Frontier FLUX.1-schnell cloud cost economics.
+
+### 💻 Week 3 Day 1 Terminal Runner (PowerShell)
+
+```powershell
+cd "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice"
+.\.venv\Scripts\Activate.ps1
+
+# Launch the Unified Open-Source Models & Cloud GPU Dashboard (Lec 62–67, Port 7860)
+python week3/day1/practice.py
+```
+
+### 🧪 Labs Included in `week3/day1/practice.py`:
+1. **Tab 1: Cloud GPU & HF Inspector (Lec 62–63)** — Diagnostic scanner testing PyTorch, CUDA devices, VRAM allocations, `nvidia-smi` binary output, and Hugging Face Hub Write token credentials.
+2. **Tab 2: Fast Latent Diffusion Studio (Lec 64)** — Lightning-fast 1 to 4 step image synthesis using `stabilityai/sdxl-turbo` with `guidance_scale=0.0`.
+3. **Tab 3: Two-Stage Diffusion Pipeline (Lec 65)** — Ensemble pipeline combining coarse composition (`sdxl-base-1.0`) and fine detail refinement (`sdxl-refiner-1.0`) with interactive split fractions.
+4. **Tab 4: Neural Text-to-Speech (Lec 66)** — Voice generation via `microsoft/speecht5_tts` utilizing customizable 512-dimensional speaker embeddings.
+5. **Tab 5: Frontier FLUX & GPU Economics Calculator (Lec 67)** — Interactive cloud cost calculator modeling active compute vs expensive idle runtime leakage on NVIDIA T4 and A100 instances.
+
+### ☁️ Standalone Google Colab Notebook:
+- [`colab_notebook.ipynb`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day1/colab_notebook.ipynb): Direct uploadable notebook containing every single execution cell from Ed's lecture, preconfigured for Google Colab's free T4 GPU tier.
+

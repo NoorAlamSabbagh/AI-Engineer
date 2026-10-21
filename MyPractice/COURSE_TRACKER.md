@@ -15,9 +15,12 @@
 | **Week 2 (Day 1 Part 1)** | Frontier APIs, Local Ollama, Reasoning & Agents | ✅ **Completed** | `week2/day1/practice.py` | `POST /models/*`, `POST /multi-agent/*` |
 | **Week 2 (Lec 42: Day 1)** | **LangChain vs LiteLLM: Choosing the Right Framework** | ✅ **Completed** | `week2/day1_langchain_vs_litellm.py` | `POST /frameworks/*` |
 | **Week 2 (Day 2)** | **Gradio Web UIs, Streaming & Brochure App** | 🟢 **Ready for Practice** | `week2/day2/` (Labs 1, 2, 3 & Dashboard) | Ports `7860`, `7861`, `7862` |
-| **Week 2 (Day 3)** | Conversational AI & Memory Chatbots | ⚪ *Queued* | `week2/day3_chatbot.py` | `POST /conversation/*` |
-| **Week 2 (Day 4 & 5)** | Capstone Airline AI Customer Support Assistant | ⚪ *Queued* | `week2/day4_airline_assistant.py` | SQLite + Gradio UI |
-| **Weeks 3 – 8** | RAG, Vector Stores, Fine-Tuning, Agents & Deployment | ⚪ *Queued* | Weeks 3 to 8 modules | ChromaDB, Modal, LangGraph |
+| **Week 2 (Day 3)** | **Building Chat UIs with Gradio (Memory & Streaming)** | 🟢 **Ready for Practice** | `week2/day3/practice.py` | Port `7860` |
+| **Week 2 (Day 4)** | **How LLM Tool Calling Really Works (No Magic, Just Prompts)** | 🟢 **Ready for Practice** | `week2/day4/practice.py` | SQLite DB + Port `7860` |
+| **Week 2 (Day 5)** | **Agentic AI, Multi-Tool Workflows & Frontier SVG Revealer** | 🟢 **Ready for Practice** | `week2/day5/practice.py` | DALL-E, Voice TTS & SVG |
+| **Week 3 (Day 1)** | **Google Colab, Cloud GPUs, SDXL-Turbo, Refiner & SpeechT5** | 🟢 **Ready for Practice** | `week3/day1/practice.py` | `colab_notebook.ipynb` & Port `7860` |
+| **Weeks 3 – 8** | Transformers, Fine-Tuning, Quantization, RAG & Agents | ⚪ *Queued* | Weeks 3 to 8 modules | Hugging Face, Unsloth, LangGraph |
+
 
 ---
 
@@ -50,6 +53,14 @@
 | **Lec 49 – 52** | **Day 3** | **Building Chat UIs with Gradio: Your First Conversational AI Assistant** | [**`week2/day3/`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day3/README.md) | `python week2/day3/practice.py`<br>*(Memory Sandwich, Streaming Chat & Clothing Sales Assistant)* | 🟢 **Ready for Practice** |
 | **Lec 53 – 56** | **Day 4** | **How LLM Tool Calling Really Works (No Magic, Just Prompts)** | [**`week2/day4/`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day4/README.md) | `python week2/day4/practice.py`<br>*(Handshake, Parallel Tools, SQLite DB & Autonomous Agent)* | 🟢 **Ready for Practice** |
 | **Lec 57 – 61** | **Day 5** | **Agentic AI, Multi-Tool Workflows & Frontier SVG Revealer** | [**`week2/day5/`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week2/day5/README.md) | `python week2/day5/practice.py`<br>*(Hierarchy, Voice TTS, DALL-E, FlightAI & Simon Willison SVG)* | 🟢 **Ready for Practice** |
+
+---
+
+## 🚀 WEEK 3: Open-Source Models, Cloud GPUs & Transformers
+
+| Lecture / Section | Day | Topic | Practiced File | Testing Method | Status |
+| :--- | :---: | :--- | :--- | :--- | :---: |
+| **Lec 62 – 67** | **Day 1** | **Google Colab, Cloud GPUs, SDXL-Turbo, Refiner & SpeechT5** | [**`week3/day1/`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day1/README.md) | `python week3/day1/practice.py`<br>*(GPU Scan, SDXL-Turbo, 2-Stage Denoise, SpeechT5 & Economics)* | 🟢 **Ready for Practice** |
 
 ---
 

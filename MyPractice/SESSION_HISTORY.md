@@ -195,3 +195,17 @@ uvicorn src.main:app --reload
      - **Tab 5 (Lec 61 Special Extra)**: Frontier SVG Artist & Animated Revealer featuring Simon Willison's pelican and course panda benchmarks with live keyframe animation.
   4. `prices.db`: Auto-initialized persistent SQLite database for flight queries and updates.
 
+### 19. Week 3 Day 1: Google Colab, Cloud GPUs & Open-Source Generative AI (Lec 62–67)
+- **Topic**: Google Colab T4 Cloud GPUs, Hugging Face Hub Write Authentication, Fast SDXL-Turbo Diffusion, 2-Stage Base+Refiner Denoising, SpeechT5 Neural TTS with Speaker Embeddings, and FLUX.1 GPU Economics.
+- **Lecture Range**: **Lectures 62 to 67** (`day1.ipynb` & Colab).
+- **Modules Created in `MyPractice/week3/day1/`**:
+  1. [`README.md`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day1/README.md): Conceptual deep-dive and layman explanation of Cloud GPUs, Hugging Face hub tokens, diffusion step distillation, neural vocoders, and cloud compute unit economics.
+  2. [`practice.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day1/practice.py): Master 5-tab Gradio app:
+     - **Tab 1 (Lec 62–63)**: Cloud GPU & HF Inspector testing PyTorch, CUDA, VRAM, `nvidia-smi`, and Hugging Face Hub token status.
+     - **Tab 2 (Lec 64)**: Fast Latent Diffusion Studio (SDXL-Turbo in 1–4 steps).
+     - **Tab 3 (Lec 65)**: Two-Stage Diffusion Pipeline (Base 80% + Refiner 20%).
+     - **Tab 4 (Lec 66)**: Neural Text-to-Speech Studio (SpeechT5 with CMU Arctic x-vector speaker profiles).
+     - **Tab 5 (Lec 67)**: Frontier FLUX & GPU Economics Calculator modeling active compute vs idle session waste on T4/A100 instances.
+  3. [`colab_notebook.ipynb`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day1/colab_notebook.ipynb): Ready-to-upload Jupyter notebook for Google Colab containing all executable cells from Ed's lecture.
+
+

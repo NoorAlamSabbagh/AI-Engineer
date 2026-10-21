@@ -647,3 +647,30 @@ python week3/day1/practice.py
 ### ☁️ Standalone Google Colab Notebook:
 - [`colab_notebook.ipynb`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day1/colab_notebook.ipynb): Direct uploadable notebook containing every single execution cell from Ed's lecture, preconfigured for Google Colab's free T4 GPU tier.
 
+---
+
+## 🚀 WEEK 3 • DAY 2: Hugging Face Pipelines for Quick AI Inference (Lec 68–71)
+- **Status**: 🟢 **Ready for Practice**
+- **Folder**: [`MyPractice/week3/day2/`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day2/README.md)
+- **Core Concepts**: Hugging Face High-Level Pipelines (`pipeline()`), Training vs. Inference distinction, Sentiment Analysis (Binary vs. Multilingual 5-Star), Named Entity Recognition (NER), Contextual Question Answering, Text Summarization, Machine Translation (Opus-MT French & Spanish), Zero-Shot NLI Classification, Causal Text Generation, and Multi-Modal Pipelines (Image Diffusion & Neural TTS).
+
+### 💻 Week 3 Day 2 Terminal Runner (PowerShell)
+
+```powershell
+cd "d:\AlamProgrammingPractice\AI_LLM Engineer\MyPractice"
+.\.venv\Scripts\Activate.ps1
+
+# Launch the Unified Hugging Face Pipelines Suite (Lec 68–71, Port 7861)
+python week3/day2/practice.py
+```
+
+### 🧪 Labs Included in `week3/day2/practice.py`:
+1. **Tab 1: Pipeline Architecture (Lec 68)** — Interactive device scanner and architectural breakdown comparing Training ($\Delta \theta$ backpropagation) vs Inference (frozen forward pass).
+2. **Tab 2: Core Text NLP Studio (Lec 69)** — Interactive Sentiment Analysis (DistilBERT vs BERT 5-Star), Named Entity Recognition (`ner`), and Extractive Question Answering (`question-answering`).
+3. **Tab 3: Sequence-to-Sequence & Zero-Shot (Lec 70)** — Text Summarization with length sliders, Opus-MT translation (English $\to$ French & Spanish), Zero-Shot dynamic categorization, and Causal Text Generation.
+4. **Tab 4: Multi-Modal Diffusion & Speech Studio (Lec 71)** — Latent Image Generation (`sdxl-turbo`) and Speech Synthesis (`speecht5_tts`).
+
+### ☁️ Standalone Google Colab Notebooks:
+- [`day2_colab_original.ipynb`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day2/day2_colab_original.ipynb): 100% Verbatim clone extracted directly from Ed's Google Drive (`1aMaEw8A56xs0bRM4lu8z7ou18jqyybGm`).
+- [`colab_notebook.ipynb`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day2/colab_notebook.ipynb): Annotated edition with clean lecture boundaries (Lec 68 to 71).
+

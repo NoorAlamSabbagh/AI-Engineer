@@ -17,8 +17,8 @@
 | **Week 2 (Day 2)** | **Gradio Web UIs, Streaming & Brochure App** | 🟢 **Ready for Practice** | `week2/day2/` (Labs 1, 2, 3 & Dashboard) | Ports `7860`, `7861`, `7862` |
 | **Week 2 (Day 3)** | **Building Chat UIs with Gradio (Memory & Streaming)** | 🟢 **Ready for Practice** | `week2/day3/practice.py` | Port `7860` |
 | **Week 2 (Day 4)** | **How LLM Tool Calling Really Works (No Magic, Just Prompts)** | 🟢 **Ready for Practice** | `week2/day4/practice.py` | SQLite DB + Port `7860` |
-| **Week 2 (Day 5)** | **Agentic AI, Multi-Tool Workflows & Frontier SVG Revealer** | 🟢 **Ready for Practice** | `week2/day5/practice.py` | DALL-E, Voice TTS & SVG |
 | **Week 3 (Day 1)** | **Google Colab, Cloud GPUs, SDXL-Turbo, Refiner & SpeechT5** | 🟢 **Ready for Practice** | `week3/day1/practice.py` | `colab_notebook.ipynb` & Port `7860` |
+| **Week 3 (Day 2)** | **Hugging Face Pipelines (NLP, Translation, Vision & Audio)** | 🟢 **Ready for Practice** | `week3/day2/practice.py` | `day2_colab_original.ipynb` & Port `7861` |
 | **Weeks 3 – 8** | Transformers, Fine-Tuning, Quantization, RAG & Agents | ⚪ *Queued* | Weeks 3 to 8 modules | Hugging Face, Unsloth, LangGraph |
 
 
@@ -61,6 +61,7 @@
 | Lecture / Section | Day | Topic | Practiced File | Testing Method | Status |
 | :--- | :---: | :--- | :--- | :--- | :---: |
 | **Lec 62 – 67** | **Day 1** | **Google Colab, Cloud GPUs, SDXL-Turbo, Refiner & SpeechT5** | [**`week3/day1/`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day1/README.md) | `python week3/day1/practice.py`<br>*(GPU Scan, SDXL-Turbo, 2-Stage Denoise, SpeechT5 & Economics)* | 🟢 **Ready for Practice** |
+| **Lec 68 – 71** | **Day 2** | **Hugging Face Pipelines for Quick AI Inference (NLP, Seq2Seq, Vision & Audio)** | [**`week3/day2/`**](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day2/README.md) | `python week3/day2/practice.py`<br>*(Sentiment, NER, QA, Translation, Zero-Shot & Multi-Modal)* | 🟢 **Ready for Practice** |
 
 ---
 

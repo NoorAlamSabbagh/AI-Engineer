@@ -208,4 +208,15 @@ uvicorn src.main:app --reload
      - **Tab 5 (Lec 67)**: Frontier FLUX & GPU Economics Calculator modeling active compute vs idle session waste on T4/A100 instances.
   3. [`colab_notebook.ipynb`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day1/colab_notebook.ipynb): Ready-to-upload Jupyter notebook for Google Colab containing all executable cells from Ed's lecture.
 
-
+### 20. Week 3 Day 2: Hugging Face Pipelines for Quick AI Inference (Lec 68–71)
+- **Topic**: Training vs Inference, Hugging Face `pipeline()` abstraction, Core NLP (Sentiment, NER, Question Answering), Seq2Seq & Zero-Shot (Summarization, Translation, Zero-Shot, Text Generation), and Multi-Modal inference (SDXL-Turbo Diffusion and SpeechT5 Audio Synthesis).
+- **Lecture Range**: **Lectures 68 to 71** (`day2.ipynb` & Colab).
+- **Modules Created in `MyPractice/week3/day2/`**:
+  1. [`README.md`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day2/README.md): Layman conceptual guide covering the difference between pre-training/fine-tuning and inference, how `pipeline()` automates pre-processing, forward pass, and post-processing in two lines of Python, and detailed breakdowns of all 9 tasks.
+  2. [`day2_colab_original.ipynb`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day2/day2_colab_original.ipynb): 100% verbatim clone of Ed's Google Colab notebook (`1aMaEw8A56xs0bRM4lu8z7ou18jqyybGm`) preserving all code, pip install flags, comments, and structure.
+  3. [`colab_notebook.ipynb`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day2/colab_notebook.ipynb): Clean, annotated edition organized into clear lecture divisions (Lec 68, 69, 70, 71) ready to run in Colab.
+  4. [`practice.py`](file:///d:/AlamProgrammingPractice/AI_LLM%20Engineer/MyPractice/week3/day2/practice.py): Master 4-tab interactive Gradio dashboard running on Port 7861 with local model caching and cloud API/PIL fallbacks:
+     - **Tab 1 (Lec 68)**: Pipeline Foundations & Device Inspector (Training vs Inference matrix, device assignment, task catalog).
+     - **Tab 2 (Lec 69)**: Core Text NLP Studio (Dual-model Sentiment Comparison, Token Entity Recognition, Contextual Extractive QA).
+     - **Tab 3 (Lec 70)**: Seq2Seq & Zero-Shot Studio (BART CNN Summarization, Helsinki-NLP MarianMT Translation, Zero-Shot NLI Classification, DistilGPT2 Generation).
+     - **Tab 4 (Lec 71)**: Multi-Modal Studio (SDXL-Turbo text-to-image with fallback canvas, SpeechT5 neural audio generation).
